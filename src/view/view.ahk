@@ -4,11 +4,11 @@ CrearGUI() {
     ;myGui := Gui("+AlwaysOnTop +ToolWindow +Border")
     myGui.SetFont("s11", "Arial")
     myGui.Title := "DLS Macro"
-
     myGui.Add("Text", "Center", "[Asignación de Teclas]")
     myGui.Add("Text", "Center", "F1 → Matar Zombies")
     myGui.Add("Text", "Center", "F2 → Obtener Posición del Puntero")
     myGui.Add("Text", "Center", "F3 → Consumir Stamina")
+    myGui.Add("Text", "Center", "F4 → Recolectar Recursos")
     myGui.Add("Text", "Center", "R  → Recargar Script")
     myGui.Add("Text", "Center", "E  → Salir del Script")
     myGui.Add("Text", "Center w300 vEstado", "Esperando comando...")

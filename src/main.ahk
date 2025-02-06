@@ -18,6 +18,7 @@ WinMove(posX, posY,,, myGui)
 F1::(ActualizarEstado("Ejecutando: Matar Zombies..."), mataZombies(), ActualizarEstado("Esperando comando..."))
 F2::(ActualizarEstado("Ejecutando: Obtener Posición..."), posicionPuntero(), ActualizarEstado("Esperando comando..."))
 F3::(ActualizarEstado("Ejecutando: Consumir Stamina..."), consumeStamina(), ActualizarEstado("Esperando comando..."))
+F4::(ActualizarEstado("Ejecutando: Recolectar Recursos..."), RecolectarRecursos(), ActualizarEstado("Esperando comando..."))
 R::(ActualizarEstado("Recargando script..."), Sleep(500), Reload())
 S::SetTimer(StopStamina, -10)
 StopStamina(*){

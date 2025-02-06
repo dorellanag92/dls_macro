@@ -1,0 +1,8 @@
+ClickPos(40, 618, 50, 50, 300) ; [lupa]
+ClickPos(328, 567, 50, 50, 300) ; [+]
+ClickPos(201, 639, 50, 50, 300) ; [search]
+ClickPos(565, 441, 50, 50, 300) ; [zombie]
+ClickPos(864, 601, 50, 50, 300) ; [attack]
+ClickPos(873, 296, 50, 50, 300) ; [squad]
+ClickPos(853, 691, 50, 50, 300) ; [march]
+ClickPos(65, 562, 50, 50, 300) ; [-]
