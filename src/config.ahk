@@ -40,7 +40,7 @@ GetGitVer() {
         return version ? version : "Sin versión"
     }
     catch Error as err {
-        MsgBox("Error al obtener version actual" err.Message, "Error")
+        MsgBox("Error al obtener version actual", "Error")
         return "Desconocida"  ; Si falla, retorna "Desconocida"
     }
 }
