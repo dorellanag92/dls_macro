@@ -1,8 +1,8 @@
 #Requires AutoHotkey v2.0
 
 global popUp := 400
-global noPopUp := 120
-global stdSped := 90
+global noPopUp := 150
+global stdSped := 95
 global clickSpd := 80
 
 ClickPos(x, y, movSpeed, clickSpeed, wait) {
@@ -27,11 +27,11 @@ LoopNiveles(ciclos) {
     ; static stdSped := 90
     ; static clickSpd := 80
 
+    ; ascendente
     Loop ciclos {
-        ; ascendente
         ClickPos( 40, 618, stdSped, clickSpd, popUp) ; [lupa]
-        ClickPos(328, 567, stdSped, clickSpd, popUp) ; [+]
-        ClickPos(201, 639, stdSped, clickSpd, popUp*2) ; [search]
+        ClickPos(328, 567, stdSped, clickSpd, noPopUp) ; [+]
+        ClickPos(201, 639, stdSped, clickSpd, popUp*2.2) ; [search]
         ClickPos(565, 441, stdSped, clickSpd, popUp) ; [zombie]
         ClickPos(864, 601, stdSped, clickSpd, popUp) ; [attack]
         ClickPos(873, 296, stdSped, clickSpd, popUp) ; [squad]
@@ -40,8 +40,8 @@ LoopNiveles(ciclos) {
     ; descendente
     Loop ciclos{
         ClickPos( 40, 618, stdSped, clickSpd, popUp) ; [lupa]
-        ClickPos( 65, 562, stdSped, clickSpd, popUp) ; [-]
-        ClickPos(201, 639, stdSped, clickSpd, popUp*2) ; [search]
+        ClickPos( 65, 562, stdSped, clickSpd, noPopUp) ; [-]
+        ClickPos(201, 639, stdSped, clickSpd, popUp*2.2) ; [search]
         ClickPos(565, 441, stdSped, clickSpd, popUp) ; [zombie]
         ClickPos(864, 601, stdSped, clickSpd, popUp) ; [attack]
         ClickPos(873, 296, stdSped, clickSpd, popUp) ; [squad]
@@ -51,9 +51,9 @@ LoopNiveles(ciclos) {
 
 ConsumeStamina(*) {
     global pararConsumir
-    static espera := 300
+    static espera := 400
     pararConsumir := false
-
+    EnfocarJuego()
     Loop {
         if pararConsumir
             break
@@ -110,25 +110,25 @@ MataZombies(*) {
     MsgBox("El matazombies ha finalizado. ¡Buen trabajo!", "Finalizado")
 }
 
-PosicionPuntero(*) {
-    MouseGetPos(&posX, &posY)
-    coordenadasFile := A_ScriptDir "\coordenadas.txt"
+; PosicionPuntero(*) {
+;     MouseGetPos(&posX, &posY)
+;     coordenadasFile := A_ScriptDir "\coordenadas.txt"
 
-    titulo := InputBox("Ingresa un título o descripción:", "Guardar coordenadas")
+;     titulo := InputBox("Ingresa un título o descripción:", "Guardar coordenadas")
 
-    if (!titulo) {
-        MsgBox("Operación cancelada.", "Cancelado")
-        return
-    }
+;     if (!titulo) {
+;         MsgBox("Operación cancelada.", "Cancelado")
+;         return
+;     }
 
-    file := FileOpen(coordenadasFile, "a")
-    if !file {
-        MsgBox("Error al abrir o crear el archivo: " coordenadasFile, "Error")
-        return
-    }
-    file.WriteLine("ClickPos(" . posX . ", " . posY . ", stdSped, clickSpd, popUp) " ';' " [" . titulo.Value . "]")
-    file.Close()
-}
+;     file := FileOpen(coordenadasFile, "a")
+;     if !file {
+;         MsgBox("Error al abrir o crear el archivo: " coordenadasFile, "Error")
+;         return
+;     }
+;     file.WriteLine("ClickPos(" . posX . ", " . posY . ", stdSped, clickSpd, popUp) " ';' " [" . titulo.Value . "]")
+;     file.Close()
+; }
 
 Recolectar(recurso) {
     ; MsgBox("Recolectando " recurso "...", "Proceso")

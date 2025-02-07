@@ -1,0 +1,6 @@
+git add .
+git commit -m "Añadida nueva funcionalidad de actualizacion de aplicacion"
+git tag -a v0.4.0 -m "Añadida nueva funcionalidad de actualizacion de aplicación"
+git push origin main
+git push origin v0.4.0
+
